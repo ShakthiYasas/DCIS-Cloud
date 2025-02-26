@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 
 # Azure Cosmos DB for MongoDB connection string
-COSMOS_DB_URI = os.getenv('AZURE_COSMOS_RESOURCEENDPOINT')
+COSMOS_DB_URI = os.getenv('CONNECTION_STRING')
 DATABASE_NAME = 'dcis'
 
 # MongoDB client initialization
