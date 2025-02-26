@@ -74,6 +74,8 @@ async def createLog(log: Log):
         data = dict()
         data['message'] = log.message
         collection.insert_one(data)
+
+        return {'message': 'Logging successful.'}
     except Exception as e:
         raise HTTPException(500, f'{str(e)} An error occured when creating the log.')
     
@@ -82,7 +84,7 @@ class Context(BaseModel):
     context: float
 
 @app.post('/backups', status_code=201)
-async def createLog(context: Context):
+async def createBackup(context: Context):
     try:
         collection = db['contextBackup']
         data = dict() 
@@ -90,5 +92,7 @@ async def createLog(context: Context):
         data['context'] = context.context
         data['timestamp'] = int(time.time())
         collection.insert_one(data)
+
+        return {'message': 'Backup successful.'}
     except Exception:
         raise HTTPException(500, 'An error occured when creating the log.')
