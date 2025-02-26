@@ -22,7 +22,8 @@ def getEnclosureMetaData():
             # Retrieving the enclosure tag.
             tag = args['tag']
             query = {'tag':tag}
-            data = collection.read_single(query)
+            data = collection.find_one(query)
+            del data['_id']
 
             return jsonify(data), 200
         else:
@@ -35,4 +36,4 @@ def getEnclosureMetaData():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=8942, debug=True)
