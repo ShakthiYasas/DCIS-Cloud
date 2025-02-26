@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 
 # Azure Cosmos DB for MongoDB connection string
-COSMOS_DB_URI = os.getenv('CONNECTION_STRING')
+COSMOS_DB_URI = "mongodb://dcisdatabase:9kgbdJI0IlhqrSD7x5gtRoQTeYpE2ZCDEjndYXfz85P2b8iGxMvMsiiSJlv3IqiQLVsS1lait0eZACDbyq6B4A==@dcisdatabase.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@dcisdatabase@"
 DATABASE_NAME = 'dcis'
 
 # MongoDB client initialization
@@ -36,4 +36,4 @@ def getEnclosureMetaData():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8942, debug=True)
+    app.run(host='0.0.0.0', port=8050)
