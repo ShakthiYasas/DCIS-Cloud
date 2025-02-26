@@ -24,6 +24,7 @@ def getEnclosureMetaData():
             query = {'tag':tag}
             data = collection.find_one(query)
             del data['_id']
+            print(data)
 
             return jsonify(data), 200
         else:
