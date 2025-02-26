@@ -1,0 +1,78 @@
+{
+    "tag": "penguine_enc",
+    "hash": "pengunin",
+    "location": {
+        "latitude": -37.78388889,
+        "logitude": 144.95222222
+    },
+    "keepertalks": [
+        1130, 1430
+    ],
+    "feedingtime": [
+        1600
+    ],
+    "situation": {
+        "situationName": "penguinSituation",
+        "attributes": [
+        {
+            "attribute": {
+            "attributeName": "temperature",
+            "regions": [{
+                "regionValue": "(0;15]",
+                "regionBelief": 100.0
+            }, 
+            {
+                "regionValue": "(15;18]",
+                "regionBelief": 75.0
+            }, 
+            {
+                "regionValue": "(18;30]",
+                "regionBelief": 60.0
+            }, 
+            {
+                "regionValue": "(30;60]",
+                "regionBelief": 20.0
+            }]
+            },
+            "weight": 8
+        }, 
+        {
+            "attribute": {
+                "attributeName": "humidity",
+                "regions": [{
+                    "regionValue": "(0;50]",
+                    "regionBelief": 100.0
+                }, {
+                    "regionValue": "(50;70]",
+                    "regionBelief": 70.0
+                }, {
+                    "regionValue": "(70;80]",
+                    "regionBelief": 50.0
+                }, {
+                    "regionValue": "(80;100]",
+                    "regionBelief": 10.0
+                }]
+            },
+            "weight": 7
+        }, 
+        {
+            "attribute": {
+            "attributeName": "hour",
+            "regions": [{
+                "regionValue": "(9;12]",
+                "regionBelief": 80.0
+            }, {
+                "regionValue": "(12;14]",
+                "regionBelief": 50.0
+            }, {
+                "regionValue": "(14;15]",
+                "regionBelief": 90.0
+            }, {
+                "regionValue": "(15;17]",
+                "regionBelief": 70.0
+            }]
+            },
+            "weight": 6
+        }]
+    }
+}

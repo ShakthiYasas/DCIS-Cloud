@@ -1,0 +1,76 @@
+{
+    "tag": "lion_enc",
+    "hash": "lion", 
+    "location": {
+        "latitude": -37.78333333,
+        "logitude": 144.95166667
+    },
+    "keepertalks": [
+        1230
+    ],
+    "feedingtime": [
+        1000
+    ],
+    "situation": {
+        "situationName": "lionSituation",
+        "attributes": [
+        {
+            "attribute": {
+            "attributeName": "temperature",
+            "regions": [{
+                "regionValue": "(0;20]",
+                "regionBelief": 100.0
+            }, 
+            {
+                "regionValue": "(20;30]",
+                "regionBelief": 75.0
+            }, 
+            {
+                "regionValue": "(30;35]",
+                "regionBelief": 65.0
+            },
+            {
+                "regionValue": "(35;38]",
+                "regionBelief": 40.0
+            }, 
+            {
+                "regionValue": "(38;60]",
+                "regionBelief": 10.0
+            }]
+            },
+            "weight": 10
+        }, 
+        {
+            "attribute": {
+                "attributeName": "humidity",
+                "regions": [{
+                    "regionValue": "(0;60]",
+                    "regionBelief": 90.0
+                }, {
+                    "regionValue": "(60;70]",
+                    "regionBelief": 70.0
+                }, {
+                    "regionValue": "(80;90]",
+                    "regionBelief": 50.0
+                }]
+            },
+            "weight": 8
+        }, 
+        {
+            "attribute": {
+            "attributeName": "hour",
+            "regions": [{
+                "regionValue": "(9;10]",
+                "regionBelief": 60.0
+            }, {
+                "regionValue": "(10;16]",
+                "regionBelief": 20.0
+            }, {
+                "regionValue": "(16;17]",
+                "regionBelief": 60.0
+            }]
+            },
+            "weight": 3
+        }]
+    }
+}

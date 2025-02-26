@@ -1,0 +1,138 @@
+{
+    "situationName": "exhaustSituation",
+    "attributes": [
+    {
+        "attribute": {
+        "attributeName": "body_temperature",
+        "regions": [{
+                "regionValue": "(0.0;28.0]",
+                "regionBelief": 100.0
+            }, {
+                "regionValue": "(28.0;32.0]",
+                "regionBelief": 80.0
+            }, {
+                "regionValue": "(32.0;35.0]",
+                "regionBelief": 60.0
+            }, {
+                "regionValue": "(35.0;36.1]",
+                "regionBelief": 40.0
+            }, {
+                "regionValue": "(36.1;37.2]",
+                "regionBelief": 20.0
+            }, {
+                "regionValue": "(37.2;38.0]",
+                "regionBelief": 40.0
+            }, {
+                "regionValue": "(38.0;39.0]",
+                "regionBelief": 60.0
+            }, {
+                "regionValue": "(39.0;40.0]",
+                "regionBelief": 80.0
+            }, {
+                "regionValue": "(40.0;60.0]",
+                "regionBelief": 100.0
+            }]
+        },
+        "weight": 7
+    }, 
+    {
+        "attribute": {
+            "attributeName": "heart_rate",
+            "regions": [{
+                "regionValue": "(0;40]",
+                "regionBelief": 100.0
+            }, {
+                "regionValue": "(40;50]",
+                "regionBelief": 80.0
+            }, {
+                "regionValue": "(50;60]",
+                "regionBelief": 50.0
+            }, {
+                "regionValue": "(60;100]",
+                "regionBelief": 10.0
+            }, {
+                "regionValue": "(100;110]",
+                "regionBelief": 25.0
+            }, {
+                "regionValue": "(110;130]",
+                "regionBelief": 55.0
+            }, {
+                "regionValue": "(130;150]",
+                "regionBelief": 65.0
+            }, {
+                "regionValue": "(150;170]",
+                "regionBelief": 80.0
+            }]
+        },
+        "weight": 10
+    }, 
+    {
+        "attribute": {
+        "attributeName": "temperature",
+        "regions": [{
+                "regionValue": "(0;5]",
+                "regionBelief": 60.0
+            }, {
+                "regionValue": "(5;10]",
+                "regionBelief": 40.0
+            }, {
+                "regionValue": "(10;15]",
+                "regionBelief": 25.0
+            }, {
+                "regionValue": "(15;25]",
+                "regionBelief": 10.0
+            }, {
+                "regionValue": "(25;30]",
+                "regionBelief": 15.0
+            }, {
+                "regionValue": "(30;35]",
+                "regionBelief": 50.0
+            }, {
+                "regionValue": "(35;40]",
+                "regionBelief": 75.0
+            }, {
+                "regionValue": "(35;40]",
+                "regionBelief": 90.0
+            }]
+        },
+        "weight": 6
+    },
+    {
+        "attribute": {
+        "attributeName": "humidity",
+        "regions": [{
+                "regionValue": "(0;40]",
+                "regionBelief": 60.0
+            }, {
+                "regionValue": "(40;60]",
+                "regionBelief": 20.0
+            }, {
+                "regionValue": "(60;100]",
+                "regionBelief": 80.0
+            }]
+        },
+        "weight": 4
+    }, 
+    {
+        "attribute": {
+        "attributeName": "zoo_time",
+        "regions": [{
+                "regionValue": "(0;1]",
+                "regionBelief": 20.0
+            }, {
+                "regionValue": "(1;2]",
+                "regionBelief": 40.0
+            }, {
+                "regionValue": "(2;3]",
+                "regionBelief": 75.0
+            }, {
+                "regionValue": "(3;4]",
+                "regionBelief": 90.0
+            }, {
+                "regionValue": "(4;6]",
+                "regionBelief": 100.0
+            }]
+        },
+        "weight": 8
+    }]
+}

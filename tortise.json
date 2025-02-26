@@ -1,0 +1,75 @@
+{
+    "tag": "tortoise_enc",
+    "hash": "tortise",
+    "location": {
+        "latitude": -37.78333333,
+        "logitude": 144.95027778
+    },
+    "keepertalks": [],
+    "feedingtime": [],
+    "situation" : {
+        "situationName": "tortiseSituation",
+        "attributes": [
+        {
+            "attribute": {
+            "attributeName": "temperature",
+            "regions": [{
+                "regionValue": "(0;20]",
+                "regionBelief": 40.0
+            }, 
+            {
+                "regionValue": "(20;30]",
+                "regionBelief": 100.0
+            }, 
+            {
+                "regionValue": "(30;35]",
+                "regionBelief": 60.0
+            },
+            {
+                "regionValue": "(35;40]",
+                "regionBelief": 30.0
+            }, 
+            {
+                "regionValue": "(40;60]",
+                "regionBelief": 10.0
+            }]
+            },
+            "weight": 10
+        }, 
+        {
+            "attribute": {
+                "attributeName": "humidity",
+                "regions": [{
+                    "regionValue": "(0;50]",
+                    "regionBelief": 60.0
+                }, {
+                    "regionValue": "(50;70]",
+                    "regionBelief": 90.0
+                }, {
+                    "regionValue": "(70;80]",
+                    "regionBelief": 50.0
+                }, {
+                    "regionValue": "(80;100]",
+                    "regionBelief": 10.0
+                }]
+            },
+            "weight": 10
+        }, 
+        {
+            "attribute": {
+            "attributeName": "hour",
+            "regions": [{
+                "regionValue": "(9;11]",
+                "regionBelief": 90.0
+            }, {
+                "regionValue": "(11;14]",
+                "regionBelief": 65.0
+            }, {
+                "regionValue": "(14;17]",
+                "regionBelief": 20.0
+            }]
+            },
+            "weight": 7
+        }]
+    }
+}

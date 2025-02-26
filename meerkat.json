@@ -1,0 +1,79 @@
+{
+    "tag": "meerkat_enc",
+    "hash": "meerkat",
+    "location": {
+        "latitude": -37.78472222,
+        "logitude": 144.95333333
+    },
+    "keepertalks": [
+        1315
+    ],
+    "feedingtime": [
+        1315
+    ],
+    "situation" : {
+        "situationName": "meerkatSituation",
+        "attributes": [
+        {
+            "attribute": {
+            "attributeName": "temperature",
+            "regions": [{
+                "regionValue": "(0;20]",
+                "regionBelief": 20.0
+            }, 
+            {
+                "regionValue": "(20;25]",
+                "regionBelief": 50.0
+            }, 
+            {
+                "regionValue": "(25;30]",
+                "regionBelief": 90.0
+            }, 
+            {
+                "regionValue": "(30;35]",
+                "regionBelief": 100.0
+            }, 
+            {
+                "regionValue": "(35;60]",
+                "regionBelief": 30.0
+            }]
+            },
+            "weight": 10
+        }, 
+        {
+            "attribute": {
+                "attributeName": "humidity",
+                "regions": [{
+                "regionValue": "(0;60]",
+                "regionBelief": 100.0
+                }, {
+                "regionValue": "(60;70]",
+                "regionBelief": 60.0
+                }, {
+                "regionValue": "(70;100]",
+                "regionBelief": 20.0
+                }]
+            },
+            "weight": 7
+            }, 
+        {
+            "attribute": {
+            "attributeName": "hour",
+            "regions": [{
+                "regionValue": "(9;13]",
+                "regionBelief": 80.0
+            }, {
+                "regionValue": "(13;14]",
+                "regionBelief": 50.0
+            }, {
+                "regionValue": "(14;16]",
+                "regionBelief": 70.0
+            }, {
+                "regionValue": "(16;17]",
+                "regionBelief": 60.0
+            }]
+            },
+            "weight": 5
+        }]
+    }
+}
