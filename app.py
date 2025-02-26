@@ -11,7 +11,7 @@ app = FastAPI()
 length = 8
 
 # Azure Cosmos DB for MongoDB connection string
-COSMOS_DB_URI = "mongodb://dcisdatabase:9kgbdJI0IlhqrSD7x5gtRoQTeYpE2ZCDEjndYXfz85P2b8iGxMvMsiiSJlv3IqiQLVsS1lait0eZACDbyq6B4A==@dcisdatabase.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@dcisdatabase@"
+COSMOS_DB_URI = os.environ['CONNECTION_STRING']
 DATABASE_NAME = 'dcis'
 
 # MongoDB client initialization
@@ -64,10 +64,31 @@ async def getSituationDescription(name: str):
     del data['_id']
     return data
 
+class Log(BaseModel):
+    message: str
+
 @app.post('/logs', status_code=201)
-async def createLog(log: object):
+async def createLog(log: Log):
     try:
         collection = db['logs']
-        data = collection.insert_one(log)
+        data = dict()
+        data['message'] = log.message
+        collection.insert_one(data)
     except Exception as e:
+        raise HTTPException(500, f'{str(e)} An error occured when creating the log.')
+    
+class Context(BaseModel):
+    enclosure: str
+    context: float
+
+@app.post('/backups', status_code=201)
+async def createLog(context: Context):
+    try:
+        collection = db['contextBackup']
+        data = dict() 
+        data['enclosure'] = context.enclosure
+        data['context'] = context.context
+        data['timestamp'] = int(time.time())
+        collection.insert_one(data)
+    except Exception:
         raise HTTPException(500, 'An error occured when creating the log.')
