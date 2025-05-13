@@ -1,6 +1,7 @@
 from pymongo import MongoClient, DESCENDING
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
+import uvicorn
 import random
 import string
 import time  
@@ -96,3 +97,7 @@ async def createBackup(context: Context):
         return {'message': 'Backup successful.'}
     except Exception:
         raise HTTPException(500, 'An error occured when creating the log.')
+    
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))  
+    uvicorn.run(app, host="0.0.0.0", port=port)
