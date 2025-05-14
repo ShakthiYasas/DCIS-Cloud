@@ -1,6 +1,7 @@
 from pymongo import MongoClient, DESCENDING
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
+import certifi
 import uvicorn
 import random
 import string
@@ -16,7 +17,7 @@ COSMOS_DB_URI = os.environ['CONNECTION_STRING']
 DATABASE_NAME = 'dcis'
 
 # MongoDB client initialization
-client = MongoClient(COSMOS_DB_URI)
+client = MongoClient(COSMOS_DB_URI, tlsCAFile=certifi.where())
 db = client[DATABASE_NAME]
 
 @app.get('/enclosures', status_code=200)
