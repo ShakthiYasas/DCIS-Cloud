@@ -41,7 +41,7 @@ async def getContextBackup(tag: str):
     data = collection.find_one(query, sort=[('timestamp', DESCENDING)])
     
     if data is None:
-        raise HTTPException(400, f'{tag} is an invalid enclosure tag.')
+        raise HTTPException(400, f'{tag} is an invalid enclosure tag or no backups found.')
     
     del data['_id']
     

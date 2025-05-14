@@ -2,3 +2,4 @@ pymongo==4.0.1
 fastapi
 uvicorn
 dnspython
+certifi
