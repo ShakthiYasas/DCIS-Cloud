@@ -1,4 +1,5 @@
 from pymongo import MongoClient, DESCENDING
+from pymongo.errors import ConnectionFailure
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import certifi
@@ -6,6 +7,7 @@ import uvicorn
 import random
 import string
 import time  
+import sys
 import os
 
 app = FastAPI()
@@ -17,7 +19,14 @@ COSMOS_DB_URI = os.environ['CONNECTION_STRING']
 DATABASE_NAME = 'dcis'
 
 # MongoDB client initialization
-client = MongoClient(COSMOS_DB_URI, tlsCAFile=certifi.where())
+try:
+    client = MongoClient(COSMOS_DB_URI, tlsCAFile=certifi.where())
+    # Test the connection
+    client.admin.command('ping')
+    print("MongoDB connection successful!")
+except ConnectionFailure as e:
+    print("MongoDB connection failed:", e)
+
 db = client[DATABASE_NAME]
 
 @app.get('/enclosures', status_code=200)
@@ -100,5 +109,6 @@ async def createBackup(context: Context):
         raise HTTPException(500, 'An error occured when creating the log.')
     
 if __name__ == "__main__":
+    print("Python version:", sys.version)
     port = int(os.environ.get("PORT", 5000))  
     uvicorn.run(app, host="0.0.0.0", port=port)
